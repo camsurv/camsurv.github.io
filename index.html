@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <title>ESP8266 LED Control</title>
+ <link rel="stylesheet" type="text/css" href="projet.css">
+<style>
+.button1 {
+    background-color: #FF0000; /* Black */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button3 {
+    background-color: #6495ED; /* Black */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button4 {
+    background-color: #6495ED; /* Black */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button1 {border-radius: 70%;}
+
+.button3 {border-radius: 70%;}
+.button4 {border-radius: 70%;}
+
+}
+
+
+.button1 {
+  position: relative;
+  top: 100px;
+  left: 510px;
+}
+.button3 {
+  position: relative;
+  top: 150px;
+  left: 410px;
+}
+.button4 {
+  position: relative;
+  top: 150px;
+  left: -10px;
+}
+</style>
+  </head>
+
+  <body>
+
+    <script src="jquery.min.js"></script>
+  
+  <!-- in the <button> tags below the ID attribute is the value sent to the arduino -->
+  
+  	
+	<button id="0" class="button1">arrêter</button> <!-- button for PB1 -->
+	
+	<button id="2" class="button3">tourner a droite</button> <!-- button for PB3 -->
+	<button id="3" class="button4">tourner a gauche</button> <!-- button for PB4 -->
+  
+    
+  <script src="jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".button1").click(function(){
+        var p = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
+        // send HTTP GET request to the IP address with the parameter "pin" and value "p", then execute the function
+        $.get("http://192.168.0.100:80/", {pin:p}); // execute get request
+      });
+    });
+    $(document).ready(function(){
+      	$(".button2").click(function(){
+        var p = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
+        // send HTTP GET request to the IP address with the parameter "pin" and value "p", then execute the function
+        $.get("http://192.168.0.100:80/", {pin:p}); // execute get request
+      });
+    });
+    $(document).ready(function(){
+      $(".button3").click(function(){
+        var p = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
+        // send HTTP GET request to the IP address with the parameter "pin" and value "p", then execute the function
+        $.get("http://192.168.0.100:80/", {pin:p}); // execute get request
+      });
+    });
+    $(document).ready(function(){
+      $(".button4").click(function(){
+        var p = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
+        // send HTTP GET request to the IP address with the parameter "pin" and value "p", then execute the function
+        $.get("http://192.168.0.100:80/", {pin:p}); // execute get request
+      });
+    });
+  </script>
+  </body>
+</html>
